@@ -3,8 +3,8 @@
 // (navbar, footer, and other things) into html doc. 
 //---------------------------------------------------
 function loadSkeleton() {
-    console.log($('#navbarPlaceholder').load('./text/nav.html'));
-    console.log($('#footerPlaceholder').load('./text/footer.html'));
-    console.log($('#navbarPlaceholderLogged').load('./text/nav-logged.html'));
+    console.log($('#navbarPlaceholder').load('../text/nav.html'));
+    console.log($('#footerPlaceholder').load('../text/footer.html'));
+    console.log($('#navbarPlaceholderLogged').load('../text/nav-logged.html'));
 }
 loadSkeleton();  //invoke the function

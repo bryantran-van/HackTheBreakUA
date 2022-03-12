@@ -47,7 +47,25 @@
     <nav id="navbarPlaceholder"></nav>
 
     <!-- the body of your page goes here -->
-    <!-- stuff -->
+    <form class="m-2">
+        <div class="col">
+            <label class="form-label">You need...</label>
+            <select class="form-select" id="supply" aria-label="Category select">
+                <option value="Food & Water" selected>Food & Water</option>
+                <option value="Medical">Medical</option>
+                <option value="Ammunition">Ammunition</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Your Location</label>
+            <input type="text" class="form-control" id="location">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Notes for Volunteers</label>
+            <input type="textarea" class="form-control" id="notes">
+        </div>
+        <input id="form-submit" type="button" class="btn btn-primary" onclick="postRequest()" value="Submit" />
+    </form>
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
@@ -55,9 +73,9 @@
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
-    <script src="./scripts/firebaseAPI_UA.js"></script>
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/help-form.js"></script>
+    <script src="../scripts/firebaseAPI_UA.js"></script>
+    <script src="../scripts/skeleton.js"></script>
+    <script src="./help-form.js"></script>
 
 </body>
 

@@ -2,9 +2,52 @@
 /*-------------------------------------
  * customize material design icon sizes 
  *-------------------------------------
+
+ For Landing Page index.html
  */
 
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
+    html body{
+
+        background-color: #FAF9F6;
+    }
+
+    header {
+
+        background-color: #4D77FF !important;
+    }
+
+    header a {
+            text-decoration: none;
+            color: white;
+    }
+
+    header a:hover h1{
+
+        color: white;
+    }
+
+    .text-end button:hover{
+
+        color: #4D77FF;
+    }
+
+    footer {
+        background-color: #FFE981;
+    }
+
+    footer .nav-link{
+
+        color: black !important;
+    }
+
+    footer .footer-text{
+
+        color: black !important;
+    }
+
+/*  @media screen and (max-width: 550px) {
+
+            #logo-text{
+
+            }
+ } */

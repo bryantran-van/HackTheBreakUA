@@ -54,7 +54,7 @@
 
     .main-card {
     min-width: 0;
-    word-wrap: break-word;
+    display:flex;
     background-color: #fff;
     background-clip: border-box;
 
@@ -72,12 +72,12 @@
         justify-content:center;
     } */
 
-
+/*
     #custom-cards{
 
     padding-bottom: 7.5% !important;
     }
-
+*/
     footer {
         background-color: #FFE981;
 

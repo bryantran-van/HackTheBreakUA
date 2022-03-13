@@ -30,6 +30,7 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <link rel="stylesheet" href="../styles/style.css"/>
+    <link rel="stylesheet" href="../styles/request/help-form.css"/>
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
@@ -47,21 +48,21 @@
     <nav id="navbarPlaceholderLogged"></nav>
 
     <!-- the body of your page goes here -->
-    <form class="m-2">
+    <form class="m-2" style="width:75% !important; padding-left: 25% !important;">
         <div class="col">
-            <label class="form-label">You need...</label>
+            <label class="form-label" style="padding:5px;">You need...</label>
             <select class="form-select" id="supply" aria-label="Category select">
                 <option value="Food & Water" selected>Food & Water</option>
                 <option value="Medical">Medical</option>
                 <option value="Ammunition">Ammunition</option>
             </select>
         </div>
-        <div class="mb-3">
-            <label class="form-label">Your Location</label>
+        <div class="mb-2">
+            <label class="form-label" style="padding:10px;">Your Location</label>
             <input type="text" class="form-control" id="location">
         </div>
-        <div class="mb-3">
-            <label class="form-label">Notes for Volunteers</label>
+        <div class="mb-2">
+            <label class="form-label" style="padding:5px;">Notes for Volunteers</label>
             <input type="textarea" class="form-control" id="notes">
         </div>
         <input id="form-submit" type="button" class="btn btn-primary" onclick="postRequest()" value="Submit" />

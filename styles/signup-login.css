@@ -18,6 +18,13 @@ form {
   float: left;
 }
 
+#footerPlaceholder{
+
+    position:fixed !important;
+    bottom: 0;
+    width: 100%;
+}
+
 /*.firebaseui-form-actions:before{
     color: #4285F4;
     font-size: 18px;

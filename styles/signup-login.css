@@ -29,10 +29,10 @@ form {
 
 
 
-/* On screens that are 992px or less, set the background color to blue */
+/* On screens that are 992px or less, set the background color to blue
 @media screen and (max-width: 992px) {
   body {
-   /* background-color: blue !important; */
+   /* background-color: blue !important;
   }
 
     .navbar-brand img {
@@ -104,7 +104,7 @@ form {
     justify-content: center;
     content:'Forgot Password?';
     float: left;
-}*/
+}
 
 .firebaseui-id-submit {
     font-size:24px;
@@ -137,12 +137,17 @@ footer .footer-text{
     font-size: 40px;
 }
 
+.firebaseui-link {
+
+    font-size: 40px;
+}
+
  /* #firebaseui-auth-container{
 
     height:100% !important;
     height: 500px;
-  } */
-}
+  } }*/
+
 
 /*@media screen and (max-width: 600px) {
   body {

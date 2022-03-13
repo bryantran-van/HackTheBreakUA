@@ -1,5 +1,90 @@
-#test {
 
-    margin: 50px;
+/*-------------------------------------
+ * customize material design icon sizes 
+ *-------------------------------------
 
-}
+ For Landing Page index.html
+ */
+
+    html body{
+        font-family: Open Sans,Arial,sans-serif;
+        background-color: #FAF9F6;
+    }
+
+    header {
+
+        background-color: #4D77FF !important;
+    }
+
+    header a {
+            text-decoration: none;
+            color: white;
+    }
+
+    header a:hover h1{
+
+        color: white;
+    }
+
+    .navbar-brand:hover{
+        color: white;
+        text-decoration:none;
+    }
+
+    .text-end button:hover{
+
+        color: #4D77FF;
+    }
+
+    .sign-login-button:hover {
+
+        color: #4D77FF;
+    }
+
+    .sub-card{
+
+        width: 65%;
+        margin: auto;
+    }
+
+    .button-color{
+
+        background-color: #FFE981;
+    }
+
+  /*  .hero-index{
+
+        justify-content:center;
+    } */
+
+
+    #custom-cards{
+
+    padding-bottom: 7.5% !important;
+    }
+
+    footer {
+        background-color: #FFE981;
+
+    }
+
+    #footerPlaceholder{
+            text-align: center;
+    }
+
+    footer .nav-link{
+
+        color: black !important;
+    }
+
+    footer .footer-text{
+
+        color: black !important;
+    }
+
+/*  @media screen and (max-width: 550px) {
+
+            #logo-text{
+
+            }
+ } */

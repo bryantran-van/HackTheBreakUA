@@ -18,6 +18,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <link rel="stylesheet" href="../styles/signup-login.css"/>
     <link rel="stylesheet" href="../styles/style.css"/>
 
 </head>
@@ -31,13 +32,13 @@
 
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a class="navbar-brand" href="index.html">
-                <img src="./images/logo-no-text-removebg.png"  height="65px">
+                <img src="/images/logo-no-text-removebg.png"  height="65px">
                 <span style="font-size: 35px;" id="logo-text">Lionheart</span></a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 
             </ul>
             <div class="text-end">
-                <a href="./signup-login/signup-login.html"> <button type="button" class="btn btn-outline-light me-2 sign-login-button">Signup / Login</button></a>
+                <a href="#"> <button type="button" class="btn btn-outline-light me-2 sign-login-button">Signup / Login</button></a>
             </div>
         </div>
     </div>
@@ -45,8 +46,9 @@
 
     <!-- Firebase authentication widget -->
     <div class="container">
-        <h1>Let's Login!</h1>
+        <h1 id="login-title">Welcome to Lionheart</h1>
     </div>
+
     <div id="firebaseui-auth-container"></div>
     <div id="loader">Loading...</div>
 

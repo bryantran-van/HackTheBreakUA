@@ -47,7 +47,45 @@
     <nav id="navbarPlaceholder"></nav>
 
     <!-- the body of your page goes here -->
-    <!-- stuff -->
+    <main>
+        <!-- 유저리스트탭 영역 -->
+        <div id="tab-1" class="col s12 tabContents">
+            <ul id="ulUserList" class="collection">
+            </ul>
+        </div>
+        <!-- 채팅방리스트탭 영역 -->
+        <div id="tab-2" class="col s12 tabContents" style="display: none">
+            <ul id="ulRoomList" class="collection">
+            </ul>
+        </div>
+        <!-- 설정탭 영역 -->
+        <div id="tab-3" class="col s12 tabContents">
+            <ul class="collection">
+                <li id="liLogOut" class="collection-item">로그아웃</li>
+            </ul>
+        </div>
+        <!-- 채팅방 메세지화면 영역 -->
+        <div id="tab-4" class="col s12 tabContents ">
+            <ul id="ulMessageList" class="collection">
+            </ul>
+            <div id="dvMsgForm" class="meta-bar chat">
+                <div id="dvInputChat" contenteditable="true" placeholder="메세지 작성"></div>
+                <i id='iBtnAttach' class="small material-icons">attach_file</i>
+                <i id='iBtnSend' class="small material-icons">send</i>
+                <input type="file" id="attachFile" style="display:none;"/>
+            </div>
+        </div>
+    </main>
+    <!-- footer 탭 영역 -->
+    <footer>
+        <ul id="tabs" class="tabs tabs-fixed-width">
+            <li class="tab col s3 blue darken-2"><a id="tabUserList" href="#tab-1"><i class="small material-icons white-text">person</i></a></li>
+            <li class="tab col s3 blue darken-2"><a id="tabRoomList" href="#tab-2"><i class="small material-icons white-text">message</i></a></li>
+            <li class="tab col s3 blue darken-2"><a id="tabSetting" href="#tab-3"><i class="small material-icons white-text">settings</i></a></li>
+            <li class="tab col s3" style="display:none"><a id="tabMessageList" href="#tab-4"></a></li>
+        </ul>
+    </footer>
+
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>

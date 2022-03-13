@@ -13,7 +13,7 @@ function loadMessages() {
       snapshot.docChanges().forEach(function(change){
         var message = change.doc.data();
 
-        styled_result = '<div class="message message-out">' + '<a href="#" data-bs-toggle="modal" data-bs-target="#modal-profile" class="avatar avatar-responsive">' + '<img class="avatar-img" src="assets/img/avatars/1.jpg" alt="">' + '</a>' + '<div class="message-inner">' + '<div class="message-body">' + '<div class="message-content">' + '<div class="message-text">' + '<p class="firebase_stored">' + message + '</p>' + '</div>' + '</div>' + '</div>' + '</div>' + '</div>'
+        styled_result = '<div class="message message-out">' + '<a href="#" data-bs-toggle="modal" data-bs-target="#modal-profile" class="avatar avatar-responsive">' + '<img class="avatar-img" src="assets/img/avatars/1.jpg" alt="">' + '</a>' + '<div class="message-inner">' + '<div class="message-body">' + '<div class="message-content">' + '<div class="message-text">' + '<p class="firebase_stored">' + message + "something erro?" + '</p>' + '</div>' + '</div>' + '</div>' + '</div>' + '</div>'
         old_div_content = jQuery('#chatmain').html();
         new_div_content = old_div_content + styled_result;
         jQuery('#chatmain').html(new_div_content);})} )}
@@ -78,7 +78,7 @@ function calculator() {
 function setup() {
     console.log("document was called")
     $("body").on("click", "#sendmessage", calculator)
-        $("body").on("click", "#sendmessage", calculator)
+       
 
 }
 

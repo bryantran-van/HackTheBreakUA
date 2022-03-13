@@ -8,7 +8,7 @@ function postAdditionalInfo() {
         if (user) {
             console.log("Retrieving data from " + user.uid);
 
-            db.collection("users").doc(user.uid).update({
+            db.collection("users").doc(user.uid).set({
                 username: usernameVal,
                 role: roleVal,
                 additionalInformation: additionalInformationVal

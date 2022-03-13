@@ -1,0 +1,53 @@
+body{
+    margin: 0px;
+}
+
+
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+#center {
+margin: 0 auto;
+width: 90%;
+}
+
+.clearfix {
+overflow: hidden;
+}
+
+.clearfix::after {
+clear: both;
+
+}
+
+.img-container {
+width:33.3%;
+float: right;
+padding: 10px;
+}
+
+
+@media screen and (max-width: 550px) {
+.img-container {
+    width: 100%;
+    float: none;
+    padding: 10px 0px 10px 0px;
+}
+#center{
+    width: 100%;
+
+}
+}
+
+#chat_list{
+
+border: 1px solid blue;
+width: 33.3%;
+padding: 100px 100px 100px 100px;
+
+
+}

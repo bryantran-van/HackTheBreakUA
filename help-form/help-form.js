@@ -22,7 +22,7 @@ function postRequest() {
                 accepted: false
             }).then(() => {
                 alert("Request was posted. Help is on the way.");
-                window.location.href = "../main-page/main.html";
+                window.location.href = "./requests.html";
             })
         }
         else {
@@ -63,12 +63,15 @@ function getRequestList() {
                         }
 
                         // requests are only shown if they are unclaimed or accepted by signed-in user
-                        if (requestDoc.data().accepted == false)
+                        if (requestDoc.data().accepted == false && owner != user.uid)
                         {
                             document.getElementById("requests-container").appendChild(newcard);
                         }
                         else if (volunteer == user.uid) {
                             document.getElementById("accepted-container").appendChild(newcard);
+                        }
+                        else if (owner == user.uid) {
+                            document.getElementById("pending-container").appendChild(newcard);
                         }
 
                     i++;
@@ -92,12 +95,22 @@ function getRequestDetails() {
                 supplyVal = requestDoc.data().supply;
                 locationVal = requestDoc.data().location;
                 ownerVal = requestDoc.data().owner;
+                volunteerVal = requestDoc.data().volunteer;
                 notesVal = requestDoc.data().notes;
                 acceptedVal = requestDoc.data().accepted;
 
                 $('#supply').html(supplyVal);
                 $('#location').html(locationVal);
-                $('#owner').html(ownerVal);
+                $('#owner').html(`Posted by ${ownerVal}`);
+                if (acceptedVal == false && ownerVal == user.uid) {
+                    $('#volunteer').html("Please wait warmly for a response.");
+                }
+                else if (acceptedVal == false && ownerVal != user.uid) {
+                    $('#volunteer').html('Ready to help? Press "Accept" to take on the request.');
+                }
+                else {
+                    $('#volunteer').html(`Accepted by ${volunteerVal}`);
+                }
                 $('#notes').html(notesVal);
 
                 if (acceptedVal == true && user.uid != ownerVal) {

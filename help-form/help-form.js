@@ -22,7 +22,7 @@ function postRequest() {
                 accepted: false
             }).then(() => {
                 alert("Request was posted. Help is on the way.");
-                window.location.href = "../mainpage/main.html";
+                window.location.href = "../main-page/main.html";
             })
         }
         else {
@@ -106,6 +106,7 @@ function acceptRequest() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             db.collection("requests").doc(requestID).update({
+                accepted: true,
                 volunteer: user.uid
             }).then(() => {
                 $('accept').html("Accepted");

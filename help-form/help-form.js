@@ -187,10 +187,29 @@ function deleteRequest() {
 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            db.collection("requests").doc(requestID).delete().then(() => {
+            db.collection("requests").doc(requestID).get().then(requestDoc => {
                 $('#accept').html("Revoked");
-                alert("You have revoked this request.");
-                window.location.href = "./requests.html";
+
+                // if an accepted job is revoked, it is marked as completed
+                if (requestDoc.data().accepted == true) {
+                    db.collection("users").doc(requestDoc.data().volunteer).get().then(() => {
+                        db.collection("users").doc(requestDoc.data().volunteer).update({
+                            completed: firebase.firestore.FieldValue.increment(1)
+                        }).then(() => {
+                            alert("You have marked the request as completed.");
+                            db.collection("requests").doc(requestID).delete();
+                            window.location.href = "./requests.html";                            
+                        })
+                    })
+
+                }
+                else {
+                    alert("You have revoked this request.");
+                    db.collection("requests").doc(requestID).delete().then(() => {
+                        window.location.href = "./requests.html";
+                    })
+                }
+
             })
         }
         else {

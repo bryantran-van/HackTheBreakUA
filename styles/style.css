@@ -7,7 +7,7 @@
  */
 
     html body{
-
+        font-family: Open Sans,Arial,sans-serif;
         background-color: #FAF9F6;
     }
 
@@ -26,20 +26,41 @@
         color: white;
     }
 
+    .navbar-brand:hover{
+        color: white;
+        text-decoration:none;
+    }
+
     .text-end button:hover{
+
+        color: #4D77FF;
+    }
+
+    .sign-login-button:hover {
 
         color: #4D77FF;
     }
 
     .sub-card{
 
-        width:75%;
+        width: 65%;
         margin: auto;
     }
 
     .button-color{
 
         background-color: #FFE981;
+    }
+
+  /*  .hero-index{
+
+        justify-content:center;
+    } */
+
+
+    #custom-cards{
+
+    padding-bottom: 7.5% !important;
     }
 
     footer {

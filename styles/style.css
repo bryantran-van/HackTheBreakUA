@@ -31,8 +31,24 @@
         color: #4D77FF;
     }
 
+    .sub-card{
+
+        width:75%;
+        margin: auto;
+    }
+
+    .button-color{
+
+        background-color: #FFE981;
+    }
+
     footer {
         background-color: #FFE981;
+
+    }
+
+    #footerPlaceholder{
+            text-align: center;
     }
 
     footer .nav-link{

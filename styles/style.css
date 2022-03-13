@@ -26,6 +26,11 @@
         color: white;
     }
 
+    .navbar-brand img {
+
+        margin-bottom: 10px;
+    }
+
     .navbar-brand:hover{
         color: white;
         text-decoration:none;
@@ -43,8 +48,9 @@
 
     .sub-card{
 
-        width: 65%;
-        margin: auto;
+
+      padding-bottom: 25% !important;
+
     }
 
     .button-color{

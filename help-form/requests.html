@@ -30,6 +30,7 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <link rel="stylesheet" href="../styles/style.css"/>
+    <link rel="stylesheet" href="../styles/request/request.css"/>
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
@@ -46,19 +47,21 @@
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholderLogged"></nav>
 
+
+    <h1 style="margin: 15px;"> Requests</h1>
     <!-- the body of your page goes here -->
     <div class="p-3">
     <a class="btn btn-primary" id="new-request" href="./help-form.html">Create Request</a>
-    <h3>Pending</h3>
+    <h3 style="padding: 10px;">Pending</h3>
     <div id="pending-container">
 
     </div>
 
-    <h3>Accepted</h3>
+    <h3 style="padding: 10px;">Accepted</h3>
     <div id="accepted-container">
 
     </div>
-    <h3>Available</h3>
+    <h3 style="padding: 10px;">Available</h3>
     <div id="requests-container">
         <template id="request-card">
             <a class="card m-2 request-card text-decoration-none" href="./view-request.html">

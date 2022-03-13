@@ -100,9 +100,13 @@ function getRequestDetails() {
                 $('#owner').html(ownerVal);
                 $('#notes').html(notesVal);
 
-                if (acceptedVal == true) {
+                if (acceptedVal == true && user.uid != ownerVal) {
                     $('#accept').html("Withdraw");
                     $('#accept').attr('onclick', 'cancelRequest()');
+                }
+                else if (user.uid == ownerVal) {
+                    $('#accept').html("Revoke");
+                    $('#accept').attr('onclick', 'deleteRequest()');
                 }
             })
         }
@@ -148,6 +152,25 @@ function cancelRequest() {
             }).then(() => {
                 $('#accept').html("Withdrew");
                 alert("You have cancelled this request.");
+                window.location.href = "./requests.html";
+            })
+        }
+        else {
+            alert("Failed to retrieve data. Please check to make sure you are signed in.");
+        }
+    })
+}
+
+function deleteRequest() {
+    requestID = localStorage.getItem("requestID");
+
+    $('#accept').html("Revoking");
+
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            db.collection("requests").doc(requestID).delete().then(() => {
+                $('#accept').html("Revoked");
+                alert("You have revoked this request.");
                 window.location.href = "./requests.html";
             })
         }

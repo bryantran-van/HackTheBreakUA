@@ -8,7 +8,7 @@
     <meta name="author" content="BCIT">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
     <!-------------------------------------------------------->
@@ -18,6 +18,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <link rel="stylesheet" href="../styles/signup-login.css"/>
     <link rel="stylesheet" href="../styles/style.css"/>
 
 </head>
@@ -25,12 +26,29 @@
 <body>
 
     <!-- NavBar -->
-    <nav id="navbarPlaceholder"></nav>
+    <!-- Navbar -->
+<header class="p-3 header-color text-white">
+    <div class="container">
+
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a class="navbar-brand" href="index.html">
+                <img src="/images/logo-no-text-removebg.png"  height="65px">
+                <span style="font-size: 35px;" id="logo-text">Lionheart</span></a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+
+            </ul>
+            <div class="text-end">
+                <a href="#"> <button type="button" class="btn btn-outline-light me-2 sign-login-button">Signup / Login</button></a>
+            </div>
+        </div>
+    </div>
+</header>
 
     <!-- Firebase authentication widget -->
     <div class="container">
-        <h1>Let's Login!</h1>
+        <h1 id="login-title">Welcome to Lionheart</h1>
     </div>
+
     <div id="firebaseui-auth-container"></div>
     <div id="loader">Loading...</div>
 

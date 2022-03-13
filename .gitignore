@@ -3,3 +3,5 @@
 node_modules/
 .vscode/
 scripts/firebaseAPI_UA.js
+.oldcode.html
+oldcode.html

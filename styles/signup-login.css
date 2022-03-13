@@ -1,0 +1,156 @@
+form {
+
+    padding: 50 50 50 50px;
+}
+
+#login-title{
+    text-align: center;
+    padding: 50px;
+}
+
+.firebaseui-title {
+    visibility: hidden !important;
+}
+
+.firebaseui-title:after {
+  content:'log in or sign up';
+  visibility: visible;
+  float: left;
+}
+
+/*.firebaseui-form-actions:before{
+    color: #4285F4;
+    font-size: 18px;
+    padding-top: 5px;
+    justify-content: center;
+    content:'Forgot Password?';
+    float: left;
+} */
+
+
+
+/* On screens that are 992px or less, set the background color to blue
+@media screen and (max-width: 992px) {
+  body {
+   /* background-color: blue !important;
+  }
+
+    .navbar-brand img {
+
+        height: 90px;
+        margin-bottom: 30px;
+    }
+
+    #logo-text {
+
+        font-size: 60px !important;
+    }
+
+   .sign-login-button{
+        height: 100px;
+        font-size: 35px;
+   }
+
+  #login-title{
+    text-align: center;
+    font-size: 65px;
+    font-weight: 600;
+
+  }
+
+  .container{
+
+    padding: 0;
+  }
+  .firebaseui-container{
+    max-width:75%;
+    height: 750px;
+  width:100%;
+  }
+
+  .firebaseui-label {
+
+    font-size: 40px;
+  }
+
+
+
+  .mdl-textfield__label{
+        visibility: hidden !important;
+  }
+
+  .mdl-textfield{
+
+    font-size:40px;
+  }
+
+  .mdl-textfield__input{
+
+    padding: 16px 0 !important;
+  }
+
+  .firebaseui-title:after {
+  padding-top: 15px;
+  font-size: 40px;
+  content:'log in or sign up';
+  visibility: visible;
+  float: left;
+}
+
+  /*.firebaseui-form-actions:before{
+    color: #4285F4;
+    font-size: 27.5px;
+    padding-top: 5px;
+    justify-content: center;
+    content:'Forgot Password?';
+    float: left;
+}
+
+.firebaseui-id-submit {
+    font-size:24px;
+
+}
+
+.firebaseui-button {
+    margin-right: 25px;
+    height:50px;
+    width: 125px;
+}
+
+.firebaseui-tos{
+    font-size:40px;
+    line-height: 53px;
+}
+
+
+.firebaseui-input{
+
+    font-size: 35px;
+}
+
+footer .nav-item {
+font-size: 40px;
+}
+
+footer .footer-text{
+
+    font-size: 40px;
+}
+
+.firebaseui-link {
+
+    font-size: 40px;
+}
+
+ /* #firebaseui-auth-container{
+
+    height:100% !important;
+    height: 500px;
+  } }*/
+
+
+/*@media screen and (max-width: 600px) {
+  body {
+    background-color: blue !important;
+  }
+} */

@@ -7,17 +7,10 @@ function postMessage(message) {
         if (user) {
             console.log("Retrieving data from " + user.uid);
 
-            db.collection("messages").doc(user.uid).set({
+            db.collection("messages").add({
                 messageSender: user.uid,
                 messageContent: message,
-            })
-
-            db.collection("users").doc(user.uid).get().then( userDoc => {
-                // console.log(`userDoc = ${userDoc.data().username}`)
-                db.collection("messages").doc(user.uid).update({
-                    username: userDoc.data().username,
-                    name:userDoc.data().name
-                })
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             })
         }
         else {

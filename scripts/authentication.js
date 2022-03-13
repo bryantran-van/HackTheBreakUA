@@ -19,7 +19,6 @@ var uiConfig = {
                     }).then(function () {
                         console.log("New user added to firestore");
                         // window.localStorage.assign("/profile/edit-profile.html");
-                        // window.location = "/profile/edit-profile.html";
                     })
                     .catch(function (error) {
                         console.log(error);

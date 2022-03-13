@@ -8,12 +8,12 @@ function postAdditionalInfo() {
         if (user) {
             console.log("Retrieving data from " + user.uid);
 
-            db.collection("users").add({
+            db.collection("users").doc(user.uid).update({
                 username: usernameVal,
                 role: roleVal,
                 additionalInformation: additionalInformationVal
             }).then(() => {
-                window.location = "../main-page/main.html";
+                window.location.href = "../main-page/main.html";
             })
         }
         else {
@@ -21,9 +21,3 @@ function postAdditionalInfo() {
         }
     })
 }
-
-function setup() {
-    $("#next-button").click(postAdditionalInfo);
-}
-
-$(document).ready(setup);

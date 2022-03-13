@@ -205,8 +205,9 @@ function deleteRequest() {
                 }
                 else {
                     alert("You have revoked this request.");
-                    db.collection("requests").doc(requestID).delete();
-                    window.location.href = "./requests.html";
+                    db.collection("requests").doc(requestID).delete().then(() => {
+                        window.location.href = "./requests.html";
+                    })
                 }
 
             })

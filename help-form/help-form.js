@@ -120,7 +120,7 @@ function acceptRequest() {
             }).then(() => {
                 $('accept').html("Accepted");
                 alert("You have accepted this request. Thank you for helping out!");
-                window.location.href = "../main-page/main.html";
+                window.location.href = "./requests.html";
             })
         }
         else {

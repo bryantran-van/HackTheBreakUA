@@ -34,19 +34,19 @@ function postRequest() {
 function getRequestList() {
     let cardTemplate = document.getElementById("request-card");
 
-    // check if user is signed in
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             console.log("Retrieving data from " + user.uid);
 
             db.collection("requests").get().then(snap => {
                 var i = 1;
-                snap.forEach(requestDoc => {
-                    if (requestDoc.data().accepted == false) {
+
+                snap.forEach(requestDoc => {  
                         var owner = requestDoc.data().owner;
                         var supply = requestDoc.data().supply;
                         var location = requestDoc.data().location;
                         var notes = requestDoc.data().notes;
+                        var volunteer = requestDoc.data().volunteer;
                         var id = requestDoc.id;
                         console.log("Retrieved request " + id);
 
@@ -62,8 +62,15 @@ function getRequestList() {
                             storeRequestData(id);
                         }
 
-                        document.getElementById("requests-container").appendChild(newcard);
-                    }
+                        // requests are only shown if they are unclaimed or accepted by signed-in user
+                        if (requestDoc.data().accepted == false)
+                        {
+                            document.getElementById("requests-container").appendChild(newcard);
+                        }
+                        else if (volunteer == user.uid) {
+                            document.getElementById("accepted-container").appendChild(newcard);
+                        }
+
                     i++;
                 })
             })

@@ -99,6 +99,11 @@ function getRequestDetails() {
                 $('#location').html(locationVal);
                 $('#owner').html(ownerVal);
                 $('#notes').html(notesVal);
+
+                if (acceptedVal == true) {
+                    $('#accept').html("Withdraw");
+                    $('#accept').attr('onclick', 'cancelRequest()');
+                }
             })
         }
         else {
@@ -110,7 +115,7 @@ function getRequestDetails() {
 function acceptRequest() {
     requestID = localStorage.getItem("requestID");
 
-    $('accept').html("Please wait");
+    $('#accept').html("Accepting");
 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -118,8 +123,31 @@ function acceptRequest() {
                 accepted: true,
                 volunteer: user.uid
             }).then(() => {
-                $('accept').html("Accepted");
+                $('#accept').html("Accepted");
                 alert("You have accepted this request. Thank you for helping out!");
+                window.location.href = "./requests.html";
+            })
+        }
+        else {
+            alert("Failed to retrieve data. Please check to make sure you are signed in.");
+        }
+    })
+}
+
+
+function cancelRequest() {
+    requestID = localStorage.getItem("requestID");
+
+    $('#accept').html("Withdrawing");
+
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            db.collection("requests").doc(requestID).update({
+                accepted: false,
+                volunteer: ""
+            }).then(() => {
+                $('#accept').html("Withdrew");
+                alert("You have cancelled this request.");
                 window.location.href = "./requests.html";
             })
         }

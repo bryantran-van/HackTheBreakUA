@@ -9,21 +9,23 @@ var uiConfig = {
             // or whether we leave that to developer to handle.
             var user = authResult.user; // get user object info
             if (authResult.additionalUserInfo.isNewUser) {
+
+                console.log("Preparing to add new user to firestore");
+                
                 // Create a collection with name "users"
                 db.collection("users")
-
-                    // Define a document for a user with UID as a document ID
-                    .doc(user.uid).set({
-                        name: user.displayName,
-                        email: user.email
-                    }).then(function () {
-                        console.log("New user added to firestore");
-                        // window.localStorage.assign("/profile/edit-profile.html");
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    })
-                window.location = "/profile/edit-profile.html";
+                // Define a document for a user with UID as a document ID
+                .doc(user.uid).set({
+                    name: user.displayName,
+                    email: user.email
+                }).then(function () {
+                    console.log("New user added to firestore");
+                    // window.location.assign("/profile/edit-profile.html");
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+                console.log("Now outside function");
             } else {
                 return true;
             }
@@ -36,7 +38,7 @@ var uiConfig = {
     },
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'popup',
-    signInSuccessUrl: '/main-page/main.html',
+    signInSuccessUrl: './main-page/main.html',
     signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
         //   firebase.auth.GoogleAuthProvider.PROVIDER_ID,

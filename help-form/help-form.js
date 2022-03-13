@@ -42,26 +42,28 @@ function getRequestList() {
             db.collection("requests").get().then(snap => {
                 var i = 1;
                 snap.forEach(requestDoc => {
-                    var owner = requestDoc.data().owner;
-                    var supply = requestDoc.data().supply;
-                    var location = requestDoc.data().location;
-                    var notes = requestDoc.data().notes;
-                    var id = requestDoc.id;
-                    console.log("Retrieved request " + id);
+                    if (requestDoc.data().accepted == false) {
+                        var owner = requestDoc.data().owner;
+                        var supply = requestDoc.data().supply;
+                        var location = requestDoc.data().location;
+                        var notes = requestDoc.data().notes;
+                        var id = requestDoc.id;
+                        console.log("Retrieved request " + id);
 
-                    let newcard = cardTemplate.content.cloneNode(true);
+                        let newcard = cardTemplate.content.cloneNode(true);
 
-                    newcard.querySelector('.card-owner').innerHTML = owner;
-                    newcard.querySelector('.card-supply').innerHTML = supply;
-                    newcard.querySelector('.card-location').innerHTML = location;
-                    newcard.querySelector('.card-notes').innerHTML = notes;
+                        newcard.querySelector('.card-owner').innerHTML = owner;
+                        newcard.querySelector('.card-supply').innerHTML = supply;
+                        newcard.querySelector('.card-location').innerHTML = location;
+                        newcard.querySelector('.card-notes').innerHTML = notes;
 
 
-                    newcard.querySelector('a').onclick = () => {
-                        storeRequestData(id);
+                        newcard.querySelector('a').onclick = () => {
+                            storeRequestData(id);
+                        }
+
+                        document.getElementById("requests-container").appendChild(newcard);
                     }
-
-                    document.getElementById("requests-container").appendChild(newcard);
                     i++;
                 })
             })

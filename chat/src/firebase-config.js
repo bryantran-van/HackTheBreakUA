@@ -7,7 +7,13 @@
  * 4. Copy the config object snippet, then add it here.
  */
 const config = {
-  /* TODO: ADD YOUR FIREBASE CONFIGURATION OBJECT HERE */
+  apiKey: "AIzaSyBj42BJURk4LvOOWPH-skwIC1_zOIhMiLY",
+  authDomain: "hackthebreakua.firebaseapp.com",
+  projectId: "hackthebreakua",
+  storageBucket: "hackthebreakua.appspot.com",
+  messagingSenderId: "1068651861074",
+  appId: "1:1068651861074:web:fb9386c865f3684e34bb8b",
+  measurementId: "G-NEN0JC99XJ"
 };
 
 export function getFirebaseConfig() {

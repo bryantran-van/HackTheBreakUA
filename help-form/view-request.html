@@ -27,7 +27,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <!-------------------------------------------->
@@ -38,7 +38,7 @@
 
 </head>
 
-<body>
+<body onload="getRequestDetails()">
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
@@ -47,25 +47,12 @@
     <nav id="navbarPlaceholderLogged"></nav>
 
     <!-- the body of your page goes here -->
-    <form class="m-2">
-        <div class="col">
-            <label class="form-label">You need...</label>
-            <select class="form-select" id="supply" aria-label="Category select">
-                <option value="Food & Water" selected>Food & Water</option>
-                <option value="Medical">Medical</option>
-                <option value="Ammunition">Ammunition</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Your Location</label>
-            <input type="text" class="form-control" id="location">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Notes for Volunteers</label>
-            <input type="textarea" class="form-control" id="notes">
-        </div>
-        <input id="form-submit" type="button" class="btn btn-primary" onclick="postRequest()" value="Submit" />
-    </form>
+    <h2 id="location">Location</h2>
+    <h4 id="supply">Supply</h4>
+    <h6 id="owner" class="text-muted">Owner</h6>
+    <p id="notes">Notes</p>
+    
+    <a id="accept" class="btn btn-primary" onclick="acceptRequest()">Accept</a>
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>

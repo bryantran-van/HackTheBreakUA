@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Request for Help | Lionheart</title>
+    <title>Request List | Lionheart</title>
     <meta name="lionheart template" content="HackTheBreak UA App">
 
     <!------------------------>
@@ -38,7 +38,7 @@
 
 </head>
 
-<body>
+<body onload="getRequestList()">
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
@@ -47,25 +47,23 @@
     <nav id="navbarPlaceholderLogged"></nav>
 
     <!-- the body of your page goes here -->
-    <form class="m-2">
-        <div class="col">
-            <label class="form-label">You need...</label>
-            <select class="form-select" id="supply" aria-label="Category select">
-                <option value="Food & Water" selected>Food & Water</option>
-                <option value="Medical">Medical</option>
-                <option value="Ammunition">Ammunition</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Your Location</label>
-            <input type="text" class="form-control" id="location">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Notes for Volunteers</label>
-            <input type="textarea" class="form-control" id="notes">
-        </div>
-        <input id="form-submit" type="button" class="btn btn-primary" onclick="postRequest()" value="Submit" />
-    </form>
+    <h3>Accepted</h3>
+    <div id="accepted-container">
+
+    </div>
+    <h3>Available</h3>
+    <div id="requests-container">
+        <template id="request-card">
+            <a class="card m-2 request-card text-decoration-none" href="./view-request.html">
+                <div class="card-body">
+                    <h6 class="card-supply float-end mb-2 text-muted text-end">Supply</h6>
+                    <h5 class="card-location">Location</h5>
+                    <h6 class="card-owner text-muted">Owner</h6>
+                    <p class="card-notes">Notes</p>
+                </div>
+            </a>
+        </template>
+    </div>
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>

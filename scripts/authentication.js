@@ -20,7 +20,7 @@ var uiConfig = {
                     email: user.email
                 }).then(function () {
                     console.log("New user added to firestore");
-                    // window.location.assign("/profile/edit-profile.html");
+                    window.location.href = "../profile/edit-profile.html";
                 })
                 .catch(function (error) {
                     console.log(error);
